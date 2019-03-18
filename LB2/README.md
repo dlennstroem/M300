@@ -23,6 +23,7 @@ Mit Vagrant können virtuelle Maschinen vollständig automatisiert erstellt werd
 #### Verzeichnisse
 
 Folgende Verzeichnisse werden werden für Packer benötigt:
+
 <tab>    | <tab>
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Ordner**   | Verwendung
