@@ -38,6 +38,17 @@ Unter "vboxmanage" werden alle Einstellungen definiert, welche Virtualbox benöt
 In diesem File muss im Abschnitt "provisioners" alle Bash Files angegeben werden, welche nach der Installation ausgeführt werden müssen. 
 ##### Preseed.cfg
 Diese Datei beinhaltet sämtliche Konfigurationen, welche für die Ubunut Installation benötit werden. Hier werden zum Beispiel die benötigten Partitionen erstellt. Ebenfalls werden hier noch die User erstellt und auch die zu installierenden Pakete definiert. 
+##### Setup.sh
+Diese Datei wird nach der Installation des Systems ausgeführt. 
+Zuerst wird der User "vagrant" in die Gruppe sudoers hinzugefügt. Danach wird das System aktualisiert und die Firewall Software ufw installiert und konfiguriert. Anschliessend wird der Apache Reverse Proxy installiert und konfiguriert. 
 ## Virtualbox
 Unter Virtualbox müssen keine weiteren Einstellungen getätigt werden. 
-                      
+
+## Sicherheit
+Wähend der Installation werden mehrere sicherheitsrelevante Einstellungen getätigt. Diese werden hier aufgelistet:
+### Firewall
+Mit dem Skript "setup.sh wird die Firewall UFW installiert. Anschliessend werden die Ports 22 und 80 (TCP) geöffnet.
+### Apache2 Proxy
+Zuerst werden die benötigten Pakete installiert und diese auch aktiviert. 
+Danach wird das File "001-reverseproxy.conf" erstellt und anschliessend auch mit den Einstellungen befüllt. 
+Danach werden die Services noch neu gestartet. 
