@@ -23,6 +23,7 @@ Mit Vagrant können virtuelle Maschinen vollständig automatisiert erstellt werd
 #### Verzeichnisse
 
 Folgende Verzeichnisse werden werden für Packer benötigt:
+
 <tab>    | <tab>
 --------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Ordner**   | Verwendung
@@ -34,7 +35,8 @@ http| Die Datei "preseed.cfg" muss hier abgelegt sein. Diese beinhaltet weitere 
 ##### Install.json
 Diese Datei beinhaltet alle wichtigen Konfigurationen. Unter dem Abschnitt "boot_command" werden alle Einstellungen definiert, welche dem Ubuntu mitgegeben werden(Keyboardlayout, Zeitzone, User etc.). 
 Der Abschnitt "builders" beinhaltet alle weiteren Konfigurationen, wie z.B. die ISO Datei oder der SSH User. 
-Unter "vboxmanage" werden alle Einstellungen definiert, welche Virtualbox benötigt (Anzahl CPUs, RAM).
+Unter "vboxmanage" werden alle Einstellungen definiert, welche Virtualbox benötigt (Anzahl CPUs, RAM).k
+
 In diesem File muss im Abschnitt "provisioners" alle Bash Files angegeben werden, welche nach der Installation ausgeführt werden müssen. 
 ##### Preseed.cfg
 Diese Datei beinhaltet sämtliche Konfigurationen, welche für die Ubunut Installation benötit werden. Hier werden zum Beispiel die benötigten Partitionen erstellt. Ebenfalls werden hier noch die User erstellt und auch die zu installierenden Pakete definiert. 
