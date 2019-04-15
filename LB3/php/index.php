@@ -1,13 +1,14 @@
-<!-- ./php/index.php -->
+<?php
+$servername = "localhost";
+$username = "dbuser";
+$password = "1234";
 
-<html>
-    <head>
-        <title>Hello World</title>
-    </head>
+// Create connection
+$conn = new mysqli($servername, $username, $password);
 
-    <body>
-        <?php
-            echo "Hello, World!";
-        ?>
-    </body>
-</html>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
