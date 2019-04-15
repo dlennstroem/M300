@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 <?php
 $servername = "localhost";
 $username = "dbuser";
@@ -12,3 +16,9 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 ?>
+
+
+<p>The webserver too!! (duh)</p>
+
+</body>
+</html>
