@@ -43,7 +43,7 @@ Diese Datei beinhaltet sämtliche Konfigurationen, welche für die Ubunut Instal
 ##### Setup.sh
 Diese Datei wird nach der Installation des Systems ausgeführt. 
 Zuerst wird der User "vagrant" in die Gruppe sudoers hinzugefügt. Danach wird das System aktualisiert und die Firewall Software ufw installiert und konfiguriert. Anschliessend wird der Apache Reverse Proxy installiert und konfiguriert. 
-## Virtualbox
+### Virtualbox
 Unter Virtualbox müssen keine weiteren Einstellungen getätigt werden. 
 
 ## Sicherheit
