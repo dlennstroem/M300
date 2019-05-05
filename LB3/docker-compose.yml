@@ -59,6 +59,7 @@ services:
 # monitoring gui
   cadvisor:
     image: google/cadvisor:v0.29.0
+    container_name: cadvisor
     command: -storage_driver_db=cadvisor
     restart: on-failure
     ports:

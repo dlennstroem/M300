@@ -75,3 +75,13 @@ Dieser Container beinhaltet PHP MyAdmin, welche auf den Contaienr db_mysql verli
 | Image             | phpmyadmin/phpmyadmin. |
 | Ports             | 8080:80                |
 | Volumes           | -                      |
+
+##### Container cadvisor
+Dieser Container beinhaltet das Überwachungstool Cadvisor. 
+| <tab>             | <tab>                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------ |
+| **Configuration** | Value                                                                                      |
+| container_name    | cadvisor                                                                                   |
+| Image             | google/cadvisor:v0.29.0                                                                    |
+| Ports             | 8888:8080                                                                                  |
+| Volumes           | /:/rootfs:ro ,/var/run:/var/run:rw ,  /sys:/sys:ro , /var/lib/docker/:/var , lib/docker:ro |
