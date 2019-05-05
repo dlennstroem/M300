@@ -68,5 +68,3 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    cpus: 1
-    mem_limit: 1024m
