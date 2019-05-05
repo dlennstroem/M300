@@ -3,7 +3,10 @@
 <body>
 
  
-<p>The webserver too!! (duh)</p>
+<p>PHP Webserver Test</p>
+<?php
+phpinfo();
+?>
 
 </body>
 </html>
