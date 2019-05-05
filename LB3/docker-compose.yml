@@ -55,7 +55,8 @@ services:
     restart: on-failure
     environment:
         MYSQL_ROOT_PASSWORD: 1234
-        
+
+# monitoring gui
   cadvisor:
     image: google/cadvisor:v0.29.0
     links:
@@ -69,5 +70,28 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+    cpus: 1
+    mem_limit: 1024m
+
+# monitoring db
+  influxdbData:
+    image: busybox
+    volumes:
+      - /var/lib/influxdb
+      - ./data/influxdb:/data
+ 
+  influxdb:
+    image: tutum/influxdb:0.9
+    restart: on-failure
+    environment:
+      - PRE_CREATE_DB=cadvisor
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+    expose:
+      - "8090"
+      - "8099"
+    volumes_from:
+      - "influxdbData"
     cpus: 1
     mem_limit: 1024m
