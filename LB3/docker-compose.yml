@@ -1,6 +1,25 @@
-version: "2.2"
+pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: 'Europe/Zurich'
+      WEBPASSWORD: '1234'
+    volumes:
+       - './etc-pihole/:/etc/pihole/'
+       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    restart: unless-stopped
 
-services:
+    cpus: 1
+    mem_limit: 1024m
 
 
   db:
@@ -17,6 +36,18 @@ services:
     mem_limit: 1024m
 
 
+  web:
+    image: php:7.2.2-apache
+    container_name: php_web
+    volumes:
+      - ./php/:/var/www/html/
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true
+      
+    cpus: 1
+    mem_limit: 1024m
 
 
   phpmyadmin:
@@ -31,8 +62,6 @@ services:
         MYSQL_ROOT_PASSWORD: 1234
     cpus: 1
     mem_limit: 1024m
-<<<<<<< HEAD
-=======
 
 # monitoring gui
   cadvisor:
@@ -49,4 +78,3 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     cpus: 1
     mem_limit: 1024m
->>>>>>> parent of e484bca... delete cAdvisor
