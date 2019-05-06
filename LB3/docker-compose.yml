@@ -83,6 +83,7 @@ services:
     mem_limit: 1024m
 
   prometheus:
+  #https://www.shellhacks.com/prometheus-monitoring-install-docker-ubuntu-centos/
     image: prom/prometheus:latest
     container_name: prometheus
     volumes:
