@@ -66,3 +66,18 @@ services:
     cpus: 1
     mem_limit: 1024m
 
+# monitoring gui
+  cadvisor:
+    image: google/cadvisor:v0.29.0
+    container_name: cadvisor
+    command: -storage_driver_db=cadvisor
+    restart: on-failure
+    ports:
+      - "8888:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    cpus: 1
+    mem_limit: 1024m
