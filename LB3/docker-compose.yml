@@ -1,25 +1,29 @@
-pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "80:80/tcp"
-      - "443:443/tcp"
-    environment:
-      TZ: 'Europe/Zurich'
-      WEBPASSWORD: '1234'
-    volumes:
-       - './etc-pihole/:/etc/pihole/'
-       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    dns:
-      - 127.0.0.1
-      - 1.1.1.1
-    restart: unless-stopped
+version: "2.2"
 
-    cpus: 1
-    mem_limit: 1024m
+services:
+
+  pihole:
+      container_name: pihole
+      image: pihole/pihole:latest
+      ports:
+        - "53:53/tcp"
+        - "53:53/udp"
+        - "67:67/udp"
+        - "80:80/tcp"
+        - "443:443/tcp"
+      environment:
+        TZ: 'Europe/Zurich'
+        WEBPASSWORD: '1234'
+      volumes:
+        - './etc-pihole/:/etc/pihole/'
+        - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      dns:
+        - 127.0.0.1
+        - 1.1.1.1
+      restart: unless-stopped
+
+      cpus: 1
+      mem_limit: 1024m
 
 
   db:
