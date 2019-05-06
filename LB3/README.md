@@ -113,3 +113,16 @@ Da unser Hostsystem nur begrenz Ressourcen hat, wird für jeden Container ein CP
 Mit dem Skript Docker Bench Security kann die Sicherheit der Container überprüft werden. 
 Das Skript ist als Github Repository verfügbar: https://github.com/docker/docker-bench-security
 Sobald das Skript erfolgreich durchgelaufen ist, kann der Report des Skriptes angeschaut werden und die dementsprechenden Sicherheitseinstellungen konfiguriert werden.
+
+## Vergleich Vorwissen - Wissenszuwachs
+Da ich im Voraus noch nichts über die Containerisierung wusste, konnte ich ernorm viel lernen. Ebenfalls konnte ich die Software Docker, Packer und Vagrant vertieft anschauen.
+Nun kenne ich die Grundlagen deren Software und weiss auch die Funktionsweise der Softwares. 
+Da ich nachher in der Openshift Abteilung arbeite, war dies sehr interessant für mich.
+
+## Reflexion
+### Reflexion LB3
+In der LB3 konnte ich sehr viel lernen. So lernte ich die Funktionsweise von Docker und Docker-Compose. Ebenfalls lernte ich, wie mein ein docker-compose.yml file erstellt und definiert. Die Verknüpfungen von einzelnen Containern sowie auch das Angeben von Volumes war mir völlig neu. 
+### Reflexion Modul
+In diesem Modul lernte ich sehr viel. Ich lernte die Funktions und Denkensweise von Container. Allgemein könnte man sagen, dass ich das Prinzip IaaC lernte. Auch das automatisierte erstellen von VMs mittels Packer war sehr interessant. Die Funktionsweise von Docker war ebenfalls sehr spannend und lehrreich. 
+So lernte ich, wie man Container erstellt, konfiguriert. Die Funktionsweise vom Docker Deamon war mir ebenfalls neu. 
+Das Modul bereitete mir sehr viel Spass und ich konnte sehr viel lernen. 
