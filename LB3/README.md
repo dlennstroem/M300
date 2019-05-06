@@ -33,6 +33,7 @@ Folgende Dateien / Verzeichnisse werden werden für dieses Projekt benötigt ben
 In dieser Datei werden alle Container definiert
 ##### Container Pihole
 Dieser Container beinhaltet die Applikation Pihole, welcher als lokaler DNS Server dient. 
+
 | <tab>             | <tab>                                                       |
 | ----------------- | ----------------------------------------------------------- |
 | **Configuration** | Value                                                       |
@@ -44,6 +45,7 @@ Dieser Container beinhaltet die Applikation Pihole, welcher als lokaler DNS Serv
 
 ##### Container DB
 Dieser Container beinhaltet eine MySQL Datenbank
+
 | <tab>               | <tab>     |
 | ------------------- | --------- |
 | **Configuration**   | Value     |
@@ -58,6 +60,7 @@ Dieser Container beinhaltet eine MySQL Datenbank
 
 ##### Container Web
 Dieser Container beinhaltet einen Apache2 Webserver
+
 | <tab>             | <tab>                 |
 | ----------------- | --------------------- |
 | **Configuration** | Value                 |
@@ -68,6 +71,7 @@ Dieser Container beinhaltet einen Apache2 Webserver
 
 ##### Container phpmyadmin
 Dieser Container beinhaltet PHP MyAdmin, welche auf den Contaienr db_mysql verlinkt ist. 
+
 | <tab>             | <tab>                  |
 | ----------------- | ---------------------- |
 | **Configuration** | Value                  |
@@ -78,6 +82,7 @@ Dieser Container beinhaltet PHP MyAdmin, welche auf den Contaienr db_mysql verli
 
 ##### Container cadvisor
 Dieser Container beinhaltet das Überwachungstool Cadvisor. 
+
 | <tab>             | <tab>                                                                                      |
 | ----------------- | ------------------------------------------------------------------------------------------ |
 | **Configuration** | Value                                                                                      |
