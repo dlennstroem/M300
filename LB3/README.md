@@ -92,6 +92,9 @@ Dieser Container beinhaltet das Überwachungstool Cadvisor.
 | Volumes           | /:/rootfs:ro ,/var/run:/var/run:rw ,  /sys:/sys:ro , /var/lib/docker/:/var , lib/docker:ro |
 
 ## Absicherung der Container
+
+### cAdvisor
+cAdvisor ist ein Überwachungstool von Google, welches selber als Container läuft. In dieser Umgebung überwacht es die zu Verfügung gestellten CPUs und den Zugriff auf den RAM. Ebenfalls wird die Aulastung der Netzwerkkarten angezeigt. 
 ### Host System
 Um den Zugriff auf das System zu beschränken, laufen die Container auf einer speziell dafür errichteten virtuellen Maschine. Diese verfügt nur über einen SSH Zugriff, welches das Angrifsrisiko minimiert. 
 Der Zugriff via SSH wurde auf der Maschine auf 2 User minimiert.
