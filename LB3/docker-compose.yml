@@ -17,18 +17,6 @@ services:
     mem_limit: 1024m
 
 
-  web:
-    image: php:7.2.2-apache
-    container_name: php_web
-    volumes:
-      - ./php/:/var/www/html/
-    ports:
-      - "8100:80"
-    stdin_open: true
-    tty: true
-      
-    cpus: 1
-    mem_limit: 1024m
 
 
   phpmyadmin:
@@ -41,21 +29,5 @@ services:
     restart: on-failure
     environment:
         MYSQL_ROOT_PASSWORD: 1234
-    cpus: 1
-    mem_limit: 1024m
-
-# monitoring gui
-  cadvisor:
-    image: google/cadvisor:v0.29.0
-    container_name: cadvisor
-    command: -storage_driver_db=cadvisor
-    restart: on-failure
-    ports:
-      - "8888:8080"
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
     cpus: 1
     mem_limit: 1024m
