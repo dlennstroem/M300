@@ -95,6 +95,18 @@ Dieser Container beinhaltet das Überwachungstool Cadvisor.
 ### Host System
 Um den Zugriff auf das System zu beschränken, laufen die Container auf einer speziell dafür errichteten virtuellen Maschine. Diese verfügt nur über einen SSH Zugriff, welches das Angrifsrisiko minimiert. 
 Der Zugriff via SSH wurde auf der Maschine auf 2 User minimiert.
+
+### Kommunikation mit dem Docker Deamon
+Die Kommunikation mit dem Docker Deamon ist besonders heikel, da dieser über Root Rechte auf den einzelnen Host Systemen verfügt. Deshlab sollte die Verbindung nur über HTTPS mit einem gültigen Zertifikat laufen. 
+
 ### Aktuelle Version der Docker Images
 Um ständig auf dem neusten Stand der Images zu sein, wird bei dem Image (sofern möglich) die neuste Version angegeben z.B: pihole/pihole:latest  . 
 Somit kann gewährleistet werden, dass immer die aktuellste Version des Images verwendet wird. 
+
+### Limitierung der Ressourcen
+Da unser Hostsystem nur begrenz Ressourcen hat, wird für jeden Container ein CPU und Memory Limit gesetzt. Somit ist gewährleistet, dass kein Container zu viele Ressourcen benötigt und somit den Host zum abstürzen bringen kann. 
+
+### Benchmark Security Tool
+Mit dem Skript Docker Bench Security kann die Sicherheit der Container überprüft werden. 
+Das Skript ist als Github Repository verfügbar: https://github.com/docker/docker-bench-security
+Sobald das Skript erfolgreich durchgelaufen ist, kann der Report des Skriptes angeschaut werden und die dementsprechenden Sicherheitseinstellungen konfiguriert werden.
