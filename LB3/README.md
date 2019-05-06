@@ -90,3 +90,11 @@ Dieser Container beinhaltet das Überwachungstool Cadvisor.
 | Image             | google/cadvisor:v0.29.0                                                                    |
 | Ports             | 8888:8080                                                                                  |
 | Volumes           | /:/rootfs:ro ,/var/run:/var/run:rw ,  /sys:/sys:ro , /var/lib/docker/:/var , lib/docker:ro |
+
+## Absicherung der Container
+### Host System
+Um den Zugriff auf das System zu beschränken, laufen die Container auf einer speziell dafür errichteten virtuellen Maschine. Diese verfügt nur über einen SSH Zugriff, welches das Angrifsrisiko minimiert. 
+Der Zugriff via SSH wurde auf der Maschine auf 2 User minimiert.
+### Aktuelle Version der Docker Images
+Um ständig auf dem neusten Stand der Images zu sein, wird bei dem Image (sofern möglich) die neuste Version angegeben z.B: pihole/pihole:latest  . 
+Somit kann gewährleistet werden, dass immer die aktuellste Version des Images verwendet wird. 
