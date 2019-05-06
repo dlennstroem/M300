@@ -21,6 +21,9 @@ services:
       - 1.1.1.1
     restart: unless-stopped
 
+    cpus: 1
+    mem_limit: 1024m
+
 
   db:
     image: mysql:5.7
@@ -32,6 +35,8 @@ services:
       MYSQL_PASSWORD: 1234
     ports:
       - "9906:3306"
+    cpus: 1
+    mem_limit: 1024m
 
 
   web:
@@ -43,6 +48,9 @@ services:
       - "8100:80"
     stdin_open: true
     tty: true
+      
+    cpus: 1
+    mem_limit: 1024m
 
 
   phpmyadmin:
@@ -55,6 +63,8 @@ services:
     restart: on-failure
     environment:
         MYSQL_ROOT_PASSWORD: 1234
+    cpus: 1
+    mem_limit: 1024m
 
 # monitoring gui
   cadvisor:
@@ -69,3 +79,5 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+    cpus: 1
+    mem_limit: 1024m
